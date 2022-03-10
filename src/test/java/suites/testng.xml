@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="WikiTest">
+    <classes>
+      <class name="WikiTest.WikiTest"/>
+	  <class name="Despegar.Despegar"/>
+      <class name="ListaDespegar.ListaDespegar"/>
+      <class name="ListadoWiki.ListadoWiki"/>
+    </classes>
+  </test> <!-- WikiTest -->
+</suite> <!-- Suite -->
