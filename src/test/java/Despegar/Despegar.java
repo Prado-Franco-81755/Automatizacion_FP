@@ -16,9 +16,9 @@ public class Despegar {
 	By locatoralojamientos = By.xpath("//a[@href='//www.despegar.com.ar/hoteles/']");
 	By ciudadlocator = By.cssSelector("div.input-container>input[placeholder = 'Ingresá una ciudad, alojamiento o punto de interés']");
 	By primercalendario = By.xpath("//div[@class='sbox5-box-dates-checkbox-container']//div[@class='sbox5-dates-input1']");
-	By primerfecha = By.xpath("//div[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//div[@class='sbox5-monthgrid'][@data-month='2022-03']//div[@class='sbox5-monthgrid-datenumber-number'][text()='16']");
+	By primerfecha = By.xpath("//div[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//div[@class='sbox5-monthgrid'  or @class='sbox5-monthgrid sbox5-compact-view'][@data-month='2022-03']//*[@class='sbox5-monthgrid-datenumber-number'][text()='16']");
 	By segundocalendario = By.xpath("//div[@class='sbox5-box-dates-ovr sbox5-dates-container']//div[@class='sbox5-dates-input2']");
-	By segundafecha = By.xpath("//div[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//div[@class='sbox5-monthgrid'][@data-month='2022-03']//div[@class='sbox5-monthgrid-datenumber-number'][text()='26']");
+	By segundafecha = By.xpath("//div[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//div[@class='sbox5-monthgrid'  or @class='sbox5-monthgrid sbox5-compact-view'][@data-month='2022-03']//*[@class='sbox5-monthgrid-datenumber-number'][text()='26']");
 	By botonpasajeros = By.cssSelector(".sbox5-3-double-input");
 	By aplicar = By.xpath("//button[@class='sbox5-box-button-ovr sbox5-3-btn -secondary -icon -lg']");
 	By verificacion = By.xpath("//li[@class='sub-nav-item -active']");
