@@ -7,7 +7,18 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 public class BaseTest {
-	public static WebDriver iniciarDriver(String url, String browserName){
+	
+	public static void goToMainPage(WebDriver driver) {
+		driver.get("http://wikipedia.org");
+	}
+	
+	public static void goToMainPage2(WebDriver driver) {
+		driver.get("https://www.despegar.com.ar/");
+	}
+	
+
+	
+	public static WebDriver iniciarDriver(String browserName){
 		WebDriver driver = null;
 		switch(browserName){
 			case "Chrome": {
@@ -24,7 +35,7 @@ public class BaseTest {
 				}
 			default : {
 				System.out.println("No se seleeciono ningun browser correcto, se le asignara Chrome");
-				System.setProperty("webdriver.chrome.driver", "lugar donde esta");
+				System.setProperty("webdriver.chrome.driver", "C:/ChromeDrivers/chromedriver.exe");
 				System.out.println("Abro browser Chrome");
 				driver = new ChromeDriver();
 				break;
@@ -35,4 +46,6 @@ public class BaseTest {
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			return driver;
 	}
+
+
 }
