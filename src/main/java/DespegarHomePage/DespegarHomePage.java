@@ -1,14 +1,11 @@
 package DespegarHomePage;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import DespegarResultsPage.DespegarResultsPage;
 
 
@@ -22,11 +19,15 @@ public class DespegarHomePage {
 	  WebElement searchInputOr;
 	@FindBy(xpath = "//div[@class='sbox5-box-dates-checkbox-container']//div[@class='sbox5-dates-input1']")
 	  WebElement primerfechacal;
-	@FindBy(xpath = "//div[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//div[@class='sbox5-monthgrid'  or @class='sbox5-monthgrid sbox5-compact-view'][@data-month='2022-03']//*[@class='sbox5-monthgrid-datenumber-number'][text()='16']")
+	@FindBy(xpath = "//div[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//div[@class='sbox5-monthgrid'  or "
+			+ "@class='sbox5-monthgrid sbox5-compact-view'][@data-month='2022-03']//*[@class='sbox5-monthgrid-datenumber-number']"
+			+ "[text()='16']")
 	  WebElement primerfechaseleccionada;
 	@FindBy(xpath = "//div[@class='sbox5-box-dates-ovr sbox5-dates-container']//div[@class='sbox5-dates-input2']")
 	  WebElement segundafechacal;
-	@FindBy(xpath = "//div[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//div[@class='sbox5-monthgrid'  or @class='sbox5-monthgrid sbox5-compact-view'][@data-month='2022-03']//*[@class='sbox5-monthgrid-datenumber-number'][text()='26']")
+	@FindBy(xpath = "//div[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//div[@class='sbox5-monthgrid'  or"
+			+ " @class='sbox5-monthgrid sbox5-compact-view'][@data-month='2022-03']//*[@class='sbox5-monthgrid-datenumber-number']"
+			+ "[text()='26']")
 	  WebElement segundafechaseleccionada;
 	@FindBy(xpath = "//button[@class='sbox5-box-button-ovr sbox5-3-btn -secondary -icon -lg']")
 	  WebElement aplicarbtn;
@@ -41,8 +42,7 @@ public class DespegarHomePage {
 	  public boolean searchInputEsVisible() {
 		  return this.searchInputOrigen.isDisplayed();
 	  }
-	  
-	  
+	  	  
 	  public boolean abrirAlojamiento() {
 		  this.hote.click();
 		  return this.hote.isDisplayed();
@@ -62,7 +62,7 @@ public class DespegarHomePage {
 		  return true;
 	  }
 	  
-	  public boolean seleccionCal() throws Exception{
+	  public boolean seleccionCalendarioIda() throws Exception{
 		  Thread.sleep(1500);
 		  this.primerfechacal.click();
 		  return this.primerfechacal.isDisplayed();
@@ -74,30 +74,31 @@ public class DespegarHomePage {
 		  return this.primerfechaseleccionada.isDisplayed();
 	  }
 	  
-	  public DespegarResultsPage searchText(String text){
-		  		
-		  WebDriverWait wait = new WebDriverWait(driver, 20);
-		  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.input-container>input[placeholder = 'Ingresá una ciudad, alojamiento o punto de interés']")));
-			//Assert.assertTrue(searchInputOrigen.isDisplayed(), "No se encontro titulo");
-		  	searchInputOr.sendKeys( "Córdoba, Córdoba, Argenti");
-			//Thread.sleep(1500);
-			searchInputOrigen.sendKeys(Keys.ENTER);
-			//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='sbox5-box-dates-checkbox-container']//div[@class='sbox5-dates-input1']")));	
-			
-			//primerfechacal.click();
-			//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//div[@class='sbox5-monthgrid'  or @class='sbox5-monthgrid sbox5-compact-view'][@data-month='2022-03']//*[@class='sbox5-monthgrid-datenumber-number'][text()='16']")));	
-			
-			//primerfechaseleccionada.click();
-			//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='sbox5-box-dates-ovr sbox5-dates-container']//div[@class='sbox5-dates-input2']")));
-			
-			//segundafechacal.click();
-			//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//div[@class='sbox5-monthgrid'  or @class='sbox5-monthgrid sbox5-compact-view'][@data-month='2022-03']//*[@class='sbox5-monthgrid-datenumber-number'][text()='26']")));
-			
-			//segundafechaseleccionada.click();
-			//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='sbox5-box-button-ovr sbox5-3-btn -secondary -icon -lg']")));
-			
-			//aplicarbtn.click();
-			return new DespegarResultsPage(this.driver);
+	  public boolean seleccionCalendarioVuelta() throws Exception{
+		  Thread.sleep(1500);
+		  this.segundafechacal.click();
+		  return this.segundafechacal.isDisplayed();
+	  }
+	  
+	  public boolean seleccionarSegundaFecha() throws Exception{
+		  Thread.sleep(1500);
+		  this.segundafechaseleccionada.click();
+		  return this.segundafechaseleccionada.isDisplayed();
+	  }
+	  
+	  public boolean seleccionarBuscar() throws Exception{
+		  Thread.sleep(1000);
+		  this.aplicarbtn.click();
+		  return this.aplicarbtn.isEnabled();
+	  }
+	  
+	  public DespegarResultsPage searchText(String text) throws Exception{
+		  this.searchInputOr.click();
+		  Thread.sleep(1500);
+		  this.searchInputOr.sendKeys(text);		  
+		  Thread.sleep(1500);
+		  this.searchInputOr.sendKeys(Keys.ENTER);	
+		  return new DespegarResultsPage(this.driver);
 
 	  }
 }

@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 
 
+
 public class DespegarResultsPage {
 	@FindBy(id="firstHeading")
 	  WebElement titulo;  
@@ -27,4 +28,9 @@ public class DespegarResultsPage {
 		  return this.titulo.isDisplayed();
 	  }
 	  
+	  public boolean verificacionBannerBuscar() throws Exception{
+		  Thread.sleep(3000);
+		  this.verificacionBanner.isDisplayed();
+		  return true;
+	  }
 }
