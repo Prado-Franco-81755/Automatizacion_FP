@@ -13,7 +13,7 @@ public class WikiResultsPage {
   @FindBy(id="firstHeading")
   WebElement titulo;
   
-  private WebDriver driver = null;
+  public WebDriver driver = null;
   
   public WikiResultsPage (WebDriver driver) {
 	  this.driver = driver;

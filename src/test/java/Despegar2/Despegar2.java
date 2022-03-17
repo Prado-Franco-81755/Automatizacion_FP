@@ -2,6 +2,8 @@ package Despegar2;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import DespegarHomePage.DespegarHomePage;
 import DespegarResultsPage.DespegarResultsPage;
@@ -10,10 +12,17 @@ import Utils.BaseTest;
 
 
 public class Despegar2 {
+	public WebDriver driver = null;
+	
+	@BeforeMethod
+	public void setup() {
+		driver = BaseTest.iniciarDriver("Chrome");
+		BaseTest.goToMainPage2(driver);
+	}
+	
+	
 	@Test(description = "Validar que las busquedas en Despegar funcionan")
 	  public void ValidarBusquedaWikipedia()throws Exception {
-		  WebDriver driver = BaseTest.iniciarDriver("Chrome");
-		  BaseTest.goToMainPage2(driver);
 		  DespegarHomePage homePage = new DespegarHomePage(driver);
 		  DespegarResultsPage homePage2 = new DespegarResultsPage(driver);
 		  Assert.assertTrue(homePage.abrirAlojamiento(), "No es posible clickear");
@@ -25,10 +34,14 @@ public class Despegar2 {
 		  Assert.assertTrue(homePage.seleccionarSegundaFecha(), "No se puede seleccionar segunda fecha");
 		  Assert.assertTrue(homePage.seleccionarBuscar(), "No se selecciono el boton");
 		  //Assert.assertTrue(homePage.searchInputEsVisible(), "El input no esta visible");
-		  //Assert.assertTrue(homePage2.verificacionBannerBuscar(), "El banner esta visible");
+		  Assert.assertTrue(homePage2.verificacionBannerBuscar(), "El banner esta visible");
 		  
 		  //Assert.assertTrue(homePage2.tituloEsVisible(), "El titulo no esta visible");
-		  driver.close();
+	}
+	
+	@AfterMethod
+	public void endSetup() {
+		driver.close();
 	}
 }
 

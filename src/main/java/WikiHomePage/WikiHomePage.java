@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-
 import WikiResultsPage.WikiResultsPage;
 
 public class WikiHomePage {
@@ -30,5 +29,7 @@ public class WikiHomePage {
 	  searchInput.submit();
 	  return new WikiResultsPage(this.driver);
   }
+  
+ 
 }
   
