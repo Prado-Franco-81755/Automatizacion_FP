@@ -1,7 +1,6 @@
 package ListaDespegar;
 
 import org.openqa.selenium.By;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,9 +11,7 @@ import java.util.List;
 public class ListaDespegar{
 	By listado = By.xpath("//ul[@class='header-list-products']/li");
 	
-	
-
-	@Test
+	@Test(groups= {"grupo_1", "grupo_2"}, description = "Se recorrio todos los titulos de despegar.com")
 	public void DespegarTrabajo() throws Exception{
 		System.setProperty("webdriver.chrome.driver", "C:/ChromeDrivers/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();		
@@ -26,8 +23,9 @@ public class ListaDespegar{
 				Thread.sleep(2000);
 				Assert.assertTrue(elemento.isDisplayed(), "No se puede cargar el elemento");
 				//elemento.click();
-				System.out.println(elemento.getText());
-			
+				System.out.println(elemento.getText());		
+				
 		}
+		driver.close();
 	}
 }

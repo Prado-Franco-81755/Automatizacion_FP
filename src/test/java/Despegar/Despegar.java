@@ -10,13 +10,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
-
 public class Despegar {
 	By locatoralojamientos = By.xpath("//a[@href='//www.despegar.com.ar/hoteles/']");
 	By ciudadlocator = By.cssSelector("div.input-container>input[placeholder = 'Ingresá una ciudad, alojamiento o punto de interés']");
 	By primercalendario = By.xpath("//div[@class='sbox5-box-dates-checkbox-container']//div[@class='sbox5-dates-input1']");
-	By primerfecha = By.xpath("//div[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//div[@class='sbox5-monthgrid'  or @class='sbox5-monthgrid sbox5-compact-view'][@data-month='2022-03']//*[@class='sbox5-monthgrid-datenumber-number'][text()='16']");
+	By primerfecha = By.xpath("//div[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//div[@class='sbox5-monthgrid'  or @class='sbox5-monthgrid sbox5-compact-view'][@data-month='2022-03']//*[@class='sbox5-monthgrid-datenumber-number'][text()='18']");
 	By segundocalendario = By.xpath("//div[@class='sbox5-box-dates-ovr sbox5-dates-container']//div[@class='sbox5-dates-input2']");
 	By segundafecha = By.xpath("//div[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//div[@class='sbox5-monthgrid'  or @class='sbox5-monthgrid sbox5-compact-view'][@data-month='2022-03']//*[@class='sbox5-monthgrid-datenumber-number'][text()='26']");
 	By botonpasajeros = By.cssSelector(".sbox5-3-double-input");
@@ -27,7 +25,7 @@ public class Despegar {
 	//By menores = By.cssSelector(".stepper__room .stepper__room__row:nth-child(2) .steppers-icon-right");
 	//By btnAplicar = By.xpath("//div[@class='sbox5-3-btn -md -primary']");
 	
-	@Test
+	@Test(groups= {"grupo_1", "grupo_2"}, description = "Se abrira despegar.com")
 	public void DespegarTrabajo() throws Exception{
 		System.setProperty("webdriver.chrome.driver", "C:/ChromeDrivers/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();		

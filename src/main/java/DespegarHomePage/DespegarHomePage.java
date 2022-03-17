@@ -1,14 +1,11 @@
 package DespegarHomePage;
 
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import DespegarResultsPage.DespegarResultsPage;
-
-
 
 public class DespegarHomePage {
 	@FindBy(id="searchInputOrigen")
@@ -21,7 +18,7 @@ public class DespegarHomePage {
 	  WebElement primerfechacal;
 	@FindBy(xpath = "//div[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//div[@class='sbox5-monthgrid'  or "
 			+ "@class='sbox5-monthgrid sbox5-compact-view'][@data-month='2022-03']//*[@class='sbox5-monthgrid-datenumber-number']"
-			+ "[text()='16']")
+			+ "[text()='18']")
 	  WebElement primerfechaseleccionada;
 	@FindBy(xpath = "//div[@class='sbox5-box-dates-ovr sbox5-dates-container']//div[@class='sbox5-dates-input2']")
 	  WebElement segundafechacal;
@@ -99,6 +96,5 @@ public class DespegarHomePage {
 		  Thread.sleep(1500);
 		  this.searchInputOr.sendKeys(Keys.ENTER);	
 		  return new DespegarResultsPage(this.driver);
-
 	  }
 }

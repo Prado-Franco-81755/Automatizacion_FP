@@ -3,6 +3,11 @@
 <suite name="Suite">
 <parameter name="Navegador" value="Chrome"></parameter>
   <test thread-count="5" name="WikiTest">
+	<groups>
+		<run>
+			<include name="grupo_4"/>
+		</run>
+	</groups>
     <classes>
 		<class name="WikiTest.WikiTest"/>
 		<class name="Despegar.Despegar"/>

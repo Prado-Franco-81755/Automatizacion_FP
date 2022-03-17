@@ -5,9 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-
-public class BaseTest {
-	
+public class BaseTest {	
 	public static void goToMainPage(WebDriver driver) {
 		driver.get("http://wikipedia.org");
 	}
@@ -15,9 +13,7 @@ public class BaseTest {
 	public static void goToMainPage2(WebDriver driver) {
 		driver.get("https://www.despegar.com.ar/");
 	}
-	
-
-	
+		
 	public static WebDriver iniciarDriver(String browserName){
 		WebDriver driver = null;
 		switch(browserName){
@@ -46,6 +42,4 @@ public class BaseTest {
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			return driver;
 	}
-
-
 }

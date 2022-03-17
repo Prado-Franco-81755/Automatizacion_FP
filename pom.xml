@@ -33,17 +33,17 @@
 				<plugin>
 							<artifactId>maven-project-info-reports-plugin</artifactId>
 							<version>3.0.0</version>
-					</plugin>
+				</plugin>
 							<plugin>
 									<groupId>org.apache.maven.plugins</groupId>
 									<artifactId>maven-surefire-plugin</artifactId>
 									<version>2.12</version>
 									<configuration>
 										<suiteXmlFiles>
-											<suiteXmlFile>src/test/java/suites/testng.xml</suiteXmlFile>
+											<suiteXmlFile>src/test/java/suites/${suite}</suiteXmlFile>
 										</suiteXmlFiles>
 									</configuration>
-							</plugin>
+								</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
